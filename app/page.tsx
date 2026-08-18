@@ -242,7 +242,7 @@ export default function Home() {
       </a>
 
       <a
-        href="linkedin.com/in/supreeth-kinnera-6a0736343"
+        href="https://www.linkedin.com/in/supreeth-kinnera-6a0736343/"
         target="_blank"
         rel="noopener noreferrer"
         style={{
