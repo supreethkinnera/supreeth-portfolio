@@ -242,7 +242,7 @@ export default function Home() {
       </a>
 
       <a
-        href="https://www.linkedin.com/in/supreeth-kinnera-6a0736343/"
+        href="https://www.linkedin.com/in/supreeth-kinnera-6a0736343"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -1466,7 +1466,7 @@ export default function Home() {
         </a>
 
         <a
-          href="linkedin.com/in/supreeth-kinnera-6a0736343"
+          href="https://www.linkedin.com/in/supreeth-kinnera-6a0736343"
          target="_blank"
          rel="noopener noreferrer"
          className="block border border-white/10 p-5 hover:border-[#168fff]/50 transition-colors"
