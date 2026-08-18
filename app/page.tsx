@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion } from "framer-motion";
 export default function Home() {
      const [menuOpen, setMenuOpen] = useState(false);
   return (
@@ -137,7 +138,10 @@ export default function Home() {
   }}
 >
   {/* LEFT SIDE */}
-  <div>
+  <motion.div
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}>
     <p
       style={{
         color: "#27a7ff",
@@ -273,16 +277,16 @@ export default function Home() {
         <span style={{ color: "#25d695" }}>●</span> AVAILABLE FOR OPPORTUNITIES
       </span>
     </div>
-  </div>
+  </motion.div>
 
   {/* RIGHT SIDE - PHOTO CARD */}
-  <div className="flex justify-center items-center mt-8 lg:mt-0"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    }}
+  <motion.div
+  className="flex justify-center items-center"
+  initial={{ opacity: 0, x: 40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
   >
+  
     <div className="w-full max-w-[390px] border border-[rgba(39,167,255,0.5)] p-[10px] bg-[rgba(0,0,0,0.25)] shadow-[0_0_50px_rgba(0,140,255,0.12)]"
       style={{
         width: "390px",
@@ -369,11 +373,15 @@ export default function Home() {
         </div>
       </div>
     </div>
-  </div>
+  </motion.div>
 </section>
-<section
+<motion.section
   id="about"
   className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <div className="mb-16">
@@ -487,10 +495,14 @@ export default function Home() {
       </div>
     </div>
   </div>
-</section>
-<section
+</motion.section>
+<motion.section
   id="experience"
-  className="px-[7%] py-28 border-t border-white/5"
+  className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <div className="mb-16">
@@ -733,10 +745,14 @@ export default function Home() {
       </div>
     </div>
   </div>
-</section>
-<section
+</motion.section>
+<motion.section
   id="skills"
-  className="px-[7%] py-28 border-t border-white/5"
+  className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <div className="mb-16">
@@ -1043,10 +1059,14 @@ export default function Home() {
       </span>
     </div>
   </div>
-</section>
-<section
+</motion.section>
+<motion.section
   id="projects"
-  className="px-[7%] py-28 border-t border-white/5"
+  className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <div className="mb-16">
@@ -1340,10 +1360,14 @@ export default function Home() {
       </div>
     </div>
   </div>
-</section>
-<section
+</motion.section>
+<motion.section
   id="education"
-  className="px-[7%] py-28 border-t border-white/5"
+  className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <div className="mb-16">
@@ -1396,11 +1420,15 @@ export default function Home() {
       </div>
     </div>
   </div>
-</section>
+</motion.section>
 
-<section
+<motion.section
   id="contact"
-  className="px-[7%] py-28 border-t border-white/5"
+  className="min-h-screen px-[7%] py-28 border-t border-white/5"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.15 }}
+  transition={{ duration: 0.7, ease: "easeOut" }}
 >
   <div className="max-w-6xl mx-auto">
     <p className="font-mono text-sm tracking-[0.35em] text-[#168fff] mb-4">
@@ -1486,7 +1514,7 @@ export default function Home() {
       </p>
     </div>
   </div>
-</section>
+</motion.section>
     </main>
   );
 }
