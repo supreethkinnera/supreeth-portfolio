@@ -1,103 +1,130 @@
 "use client";
+import { useState } from "react";
 export default function Home() {
+     const [menuOpen, setMenuOpen] = useState(false);
   return (
     <main style={{ minHeight: "100vh" }}>
       {/* NAVBAR */}
-      <nav
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: "72px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "0 7%",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-          background: "rgba(7,16,24,0.82)",
-          backdropFilter: "blur(10px)",
-          zIndex: 1000,
-        }}
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-[#071018]/90 backdrop-blur-xl">
+  <div className="h-[72px] px-[7%] flex items-center justify-between">
+    <div className="font-mono tracking-[0.2em] text-xs md:text-sm font-bold">
+      <span className="text-white">SUPREETH</span>
+      <span className="text-[#168fff]"> / </span>
+      <span className="text-[#6f7c88] hidden sm:inline">
+        JAVA-FULL-STACK
+      </span>
+    </div>
+
+    {/* DESKTOP MENU */}
+    <div className="hidden xl:flex items-center gap-7 font-mono text-xs tracking-[0.15em]">
+      <a href="#about" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">01</span> ABOUT
+      </a>
+
+      <a href="#experience" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">02</span> EXPERIENCE
+      </a>
+
+      <a href="#skills" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">03</span> SKILLS
+      </a>
+
+      <a href="#projects" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">04</span> PROJECTS
+      </a>
+
+      <a href="#education" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">05</span> EDUCATION
+      </a>
+
+      <a href="#contact" className="text-[#c8d0d8] hover:text-white">
+        <span className="text-[#168fff]">06</span> CONTACT
+      </a>
+
+      <a
+        href="https://github.com/supreeth"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="border border-white/15 px-4 py-3 text-white hover:border-[#168fff]/60"
       >
-        <div
-          style={{
-            fontFamily: "monospace",
-            letterSpacing: "3px",
-            fontSize: "13px",
-            fontWeight: 700,
-          }}
+        GITHUB <span className="text-[#25d695]">●</span>
+      </a>
+    </div>
+
+    {/* MOBILE BUTTON */}
+    <button
+      onClick={() => setMenuOpen(!menuOpen)}
+      className="xl:hidden border border-white/15 px-4 py-2 font-mono text-xs tracking-[0.15em]"
+      aria-label="Toggle navigation"
+    >
+      {menuOpen ? "CLOSE ×" : "MENU ☰"}
+    </button>
+  </div>
+
+  {/* MOBILE MENU */}
+  {menuOpen && (
+    <div className="xl:hidden px-[7%] py-6 border-t border-white/5 bg-[#071018]">
+      <div className="flex flex-col gap-6 font-mono text-sm tracking-[0.15em]">
+        <a
+          href="#about"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
         >
-          <span style={{ color: "#ffffff" }}>SUPREETH</span>
-          <span style={{ color: "#168fff" }}> / </span>
-          <span style={{ color: "#6f7c88" }}>JAVA-FULL-STACK</span>
-        </div>
-
-        <div
-          style={{
-            display: "flex",
-            gap: "28px",
-            alignItems: "center",
-            fontFamily: "monospace",
-            fontSize: "12px",
-            letterSpacing: "2px",
-          }}
-        >
-          <a href="#about" style={{ color: "#c8d0d8", textDecoration: "none" }}>
-            <span style={{ color: "#168fff" }}>01</span> ABOUT
-          </a>
-
-          <a
-            href="#experience"
-            style={{ color: "#c8d0d8", textDecoration: "none" }}
-          >
-            <span style={{ color: "#168fff" }}>02</span> EXPERIENCE
-          </a>
-
-          <a href="#skills" style={{ color: "#c8d0d8", textDecoration: "none" }}>
-            <span style={{ color: "#168fff" }}>03</span> SKILLS
-          </a>
-
-          <a
-            href="#projects"
-            style={{ color: "#c8d0d8", textDecoration: "none" }}
-          >
-            <span style={{ color: "#168fff" }}>04</span> PROJECTS
-          </a>
-
-          <a
-            href="#education"
-            style={{ color: "#c8d0d8", textDecoration: "none" }}
-          >
-            <span style={{ color: "#168fff" }}>05</span> EDUCATION
-          </a>
-
-          <a
-            href="#contact"
-            style={{ color: "#c8d0d8", textDecoration: "none" }}
-          >
-            <span style={{ color: "#168fff" }}>06</span> CONTACT
-          </a>
-        </div>
+          <span className="text-[#168fff]">01</span> ABOUT
+        </a>
 
         <a
-           href="https://github.com/supreeth"
-           target="_blank"
-           rel="noopener noreferrer"
-          style={{
-            border: "1px solid rgba(255,255,255,0.15)",
-            padding: "12px 18px",
-            color: "white",
-            textDecoration: "none",
-            fontFamily: "monospace",
-            letterSpacing: "2px",
-            fontSize: "12px",
-          }}
+          href="#experience"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
         >
-          GITHUB <span style={{ color: "#25d695" }}>●</span>
+          <span className="text-[#168fff]">02</span> EXPERIENCE
         </a>
-      </nav>
 
+        <a
+          href="#skills"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
+        >
+          <span className="text-[#168fff]">03</span> SKILLS
+        </a>
+
+        <a
+          href="#projects"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
+        >
+          <span className="text-[#168fff]">04</span> PROJECTS
+        </a>
+
+        <a
+          href="#education"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
+        >
+          <span className="text-[#168fff]">05</span> EDUCATION
+        </a>
+
+        <a
+          href="#contact"
+          onClick={() => setMenuOpen(false)}
+          className="text-[#c8d0d8]"
+        >
+          <span className="text-[#168fff]">06</span> CONTACT
+        </a>
+
+        <a
+          href="https://github.com/supreeth"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white"
+        >
+          GITHUB ↗
+        </a>
+      </div>
+    </div>
+  )}
+</nav>
       {/* HERO */}
       <section className="min-h-screen grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] items-center gap-12 lg:gap-[70px] px-[7%] pt-[130px] pb-20"
   style={{
@@ -196,7 +223,7 @@ export default function Home() {
       </a>
 
       <a
-        href="YOUR_GITHUB_URL"
+        href="https://github.com/supreethkinnera"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -211,7 +238,7 @@ export default function Home() {
       </a>
 
       <a
-        href="YOUR_LINKEDIN_URL"
+        href="linkedin.com/in/supreeth-kinnera-6a0736343"
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -1411,7 +1438,7 @@ export default function Home() {
         </a>
 
         <a
-          href="YOUR_LINKEDIN_URL"
+          href="linkedin.com/in/supreeth-kinnera-6a0736343"
          target="_blank"
          rel="noopener noreferrer"
          className="block border border-white/10 p-5 hover:border-[#168fff]/50 transition-colors"
@@ -1425,7 +1452,7 @@ export default function Home() {
           </p>
         </a>
         <a
-          href="YOUR_GITHUB_URL"
+          href="https://github.com/supreethkinnera"
           target="_blank"
           rel="noopener noreferrer"
           className="block border border-white/10 p-5 hover:border-[#168fff]/50 transition-colors"
